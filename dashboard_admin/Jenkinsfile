@@ -46,8 +46,8 @@ pipeline {
 //     steps {
 //         script {
 //             // Construisez l'image Docker
-//             bat docker build -t "FRONT-ANGULAR-Image:${BUILD_ID}" .
-//             bat "docker tag FRONT-ANGULAR-Image:${BUILD_ID} faika/FRONT-ANGULAR-Image:${BUILD_ID} "
+//             bat docker build -t "cagotte-v2:${BUILD_ID}" .
+//             bat "docker tag cagnotte-v2-Image:${BUILD_ID} faika/cagnotte-v2:${BUILD_ID} "
 //         }
 //     }
 // }
@@ -55,8 +55,8 @@ pipeline {
     steps {
         script {
             // Construisez l'image Docker
-            bat "docker build -t cagnotte-v1:${BUILD_ID} ."
-            bat "docker tag cagnotte-v1:${BUILD_ID} faika/cagnotte-v1:${BUILD_ID}"
+            bat "docker build -t cagnotte-v2:${BUILD_ID} dashboard_admin"
+            bat "docker tag cagnotte-v2:${BUILD_ID} faika/cagnotte-v2:${BUILD_ID}"
         }
     }
 }
@@ -64,7 +64,7 @@ pipeline {
     steps {
         script {
             // Exécutez le conteneur Docker en utilisant l'image construite
-            bat "docker run -d -p 80:80 --name dashboard_admin_${BUILD_ID} faika/cagnotte-v1-image:${BUILD_ID}"
+            bat "docker run -d -p 80:80 --name dashboard_admin_${BUILD_ID} faika/cagnotte-v2-image:${BUILD_ID}"
         }
     }
 }
