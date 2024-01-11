@@ -1,0 +1,140 @@
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+<div x-data="{ cartOpen: false , isOpen: false }" class="bg-white">
+  <header>
+
+
+    <div class="relative mt-24 max-w-lg mx-auto">
+      <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
+        <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+
+      <input
+        class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline"
+        type="text" placeholder="Search">
+    </div>
+
+  </header>
+
+  <main class="my-8">
+    <div class="container mx-auto px-6">
+
+
+      <div class="mt-16">
+        <h3 class="text-gray-600 text-center text-2xl font-medium">tous les Catégories</h3>
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
+          <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+            <img class="flex items-end justify-end h-56 w-full bg-cover" src="/assets/img/12.jpg">
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase text-lg">Santé</h3>
+              <div class="ml-24">
+                <button
+                  class=" inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+                  consulter
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+            <img class="flex items-end justify-end h-56 w-full bg-cover" src="/assets/img/13.jpg">
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase text-lg">Sport</h3>
+              <div class="ml-24">
+                <button
+                  class=" inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+                  consulter
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+            <img class="flex items-end justify-end h-56 w-full bg-cover" src="/assets/img/17.jpg">
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase text-lg">Environnement</h3>
+              <div class="ml-24">
+                <button
+                  class=" inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+                  consulter
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+            <img class="flex items-end justify-end h-56 w-full bg-cover" src="/assets/img/14.jpg">
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase text-lg">Animaux</h3>
+              <div class="ml-24">
+                <button
+                  class=" inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+                  consulter
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-16">
+
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
+          <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+            <img class="flex items-end justify-end h-56 w-full bg-cover" src="/assets/img/15.jpg">
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase text-lg">Associations</h3>
+              <div class="ml-24">
+                <button
+                  class=" inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+                  consulter
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+            <img class="flex items-end justify-end h-56 w-full bg-cover" src="/assets/img/16.jpg">
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase text-lg">Idée de projet</h3>
+              <div class="ml-24">
+                <button
+                  class=" inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+                  consulter
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+            <img class="flex items-end justify-end h-56 w-full bg-cover" src="/assets/img/17.jpg">
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase text-lg">Environnement</h3>
+              <div class="ml-24">
+                <button
+                  class=" inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+                  consulter
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+            <img class="flex items-end justify-end h-56 w-full bg-cover" src="/assets/img/12.jpg">
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase text-lg">Santé</h3>
+              <div class="ml-24">
+                <button
+                  class=" inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+                  consulter
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+</div>
+<div class="mt-44">
+
+</div>
