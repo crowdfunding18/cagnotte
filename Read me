@@ -1,0 +1,96 @@
+
+To connect your Angular project (running on port 4200) with your Spring Boot backend, you'll need to make sure that your Angular frontend is configured to communicate with your Spring Boot API. Here are the general steps to achieve this:
+
+1. CORS Configuration:
+Ensure that your Spring Boot backend allows cross-origin requests. You can do this by adding appropriate CORS (Cross-Origin Resource Sharing) configuration.
+
+In your Spring Boot application, you can create a WebMvcConfigurer bean:
+
+java
+Copy code
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+            .allowedOrigins("http://localhost:4200")  // Update with your Angular app's URL
+            .allowedMethods("GET", "POST", "PUT", "DELETE");
+    }
+}
+2. Angular Service:
+In your Angular project, create a service to handle API requests. You can use Angular's HttpClient for this purpose.
+
+typescript
+Copy code
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CagnotteService {
+  private apiUrl = 'http://localhost:8080/api/cagnotte';  // Update with your Spring Boot API URL
+
+  constructor(private http: HttpClient) {}
+
+  getAllCagnotte(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}`);
+  }
+
+  getCagnotteById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  createCagnotte(cagnotte: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}`, cagnotte);
+  }
+
+  updateCagnotte(id: number, cagnotte: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, cagnotte);
+  }
+
+  deleteCagnotte(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${id}`);
+  }
+}
+3. Angular Component:
+In your Angular component, use the service to interact with the backend.
+
+typescript
+Copy code
+import { Component, OnInit } from '@angular/core';
+import { CagnotteService } from './cagnotte.service';
+
+@Component({
+  selector: 'app-cagnotte',
+  templateUrl: './cagnotte.component.html',
+  styleUrls: ['./cagnotte.component.css']
+})
+export class CagnotteComponent implements OnInit {
+  cagnotteList: any[];
+
+  constructor(private cagnotteService: CagnotteService) {}
+
+  ngOnInit(): void {
+    this.loadCagnotteList();
+  }
+
+  loadCagnotteList(): void {
+    this.cagnotteService.getAllCagnotte().subscribe(data => {
+      this.cagnotteList = data;
+    });
+  }
+
+  // Implement other CRUD operations as needed
+}
+4. Angular Template (HTML):
+Create an HTML template to display the cagnotte data.
+
+html
+Copy code
+<ul>
+  <li *ngFor="let cagnotte of cagnotteList">
+    {{ cagnotte.nom }} - {{ cagnotte.description }} - {{ cagnotte.prix }}
+  </li>
+</ul>
